@@ -1,11 +1,9 @@
 <template>
-    <div class="">
+    <div class="home">
         <NavbarVue></NavbarVue>
-        <div class="col-md-8 d-flex">
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
+        <div class="">
+            <Card v-show="!viewForm" @updateStudentsFunc="updateStudentsFunc"></Card>
+            <FromVue v-show="viewForm" :studentsDataProps="studentsData"></FromVue>
         </div>
         <Copyright></Copyright>
     </div>
@@ -15,14 +13,29 @@
 import NavbarVue from '@/components/Navbar.vue';
 import Card from '@/components/Card.vue'
 import Copyright from '@/components/Copyright.vue'
+import FromVue from '@/components/From.vue';
 export default {
     name: 'HomePage',
     components:{
         NavbarVue,
         Card,
-        Copyright
+        Copyright,
+        FromVue
         
-    }
+    },
+    methods:{
+        updateStudentsFunc(item){
+          this.studentsData = item
+          this.viewForm = true;
+        }
+      },
+        data(){
+          return{
+            viewForm : false,
+            studentsData : null
+          
+        }
+      }
 }
 </script>
 

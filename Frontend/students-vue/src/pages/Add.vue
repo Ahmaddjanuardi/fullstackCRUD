@@ -17,6 +17,11 @@ export default {
         NavbarVue,
         FromVue,
         Copyright
+    },
+    data(){
+        return{
+            message : "Your Data Has Been Submitted!"
+        }
     }
 }
 </script>
