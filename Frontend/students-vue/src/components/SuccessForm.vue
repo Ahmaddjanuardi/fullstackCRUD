@@ -1,8 +1,10 @@
 <template>
     <div class="card-body border-color-pink">
       <h5 class="card-title">Success!</h5>
-      <p class="card-text">{{ message }}</p>
-      <router-link to="/" class="btn bg-color-pink text-dark">Back</router-link>
+      <p class="card-text">Your Data Has Been {{judul}}</p>
+      <router-link to="/" v-if="judul === 'Submit'" class="btn bg-color-pink text-dark">Back</router-link>
+      <router-link to="/" v-else-if="judul === 'Update'" class="btn bg-color-pink text-dark">Back</router-link>
+      <button class="btn bg-color-pink text-dark" @click="RefreshFunc" v-else>Refresh</button>
     </div>
   </template>
   
@@ -11,15 +13,27 @@
     name: 'SuccessForm',
     data(){
       return{
-        message: this.sendMessage
+       judul : null,
       }
     },
-    props:['sendMessage'],
-    // watch:{
-    //   sendMessage(newValue){
-    //     this.message = newValue
-    //   }
-    // }
+   methods:{
+    ubahJudul(){
+      let route = this.$route.fullPath;
+      if (route === '/add') {
+        this.judul = "Submit";
+      }else if(route === '/'){
+        this.judul = "Delete";
+      }else{
+        this.judul = "Update"
+      }
+    },
+    RefreshFunc(){
+      location.reload();
+    }
+   },
+   mounted(){
+    this.ubahJudul();
+   },
   }
   </script>
   

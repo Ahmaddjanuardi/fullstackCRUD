@@ -1,6 +1,6 @@
 <template>
     <div class="">
-      <NavbarVue></NavbarVue>
+      <NavbarVue> </NavbarVue>
       <FromVue></FromVue>
       <Copyright></Copyright>
   </div>

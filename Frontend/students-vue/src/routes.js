@@ -9,11 +9,12 @@ export default[
     },
     {
         path: "/add",
-        component: AddPage
+        component: AddPage,
+        name: 'Add Student'
     },
     {
         path: "/update/:id",
         component: UpdatePage,
-        name: 'update'
+        name: 'Update Student'
     }
 ]

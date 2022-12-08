@@ -1,15 +1,15 @@
 <template>
   <div class="image">
     <img src="@/assets/img/img_code.jpg" alt="">
-    <router-link to="/add" v-show="CurrentRoutPath == '/'">
+    <!-- <router-link to="/add" v-show="CurrentRoutPath == '/'">
         <button type="button" class="btn btn-primary">Add Data</button>
-    </router-link>
-    <router-link to="/" v-show="CurrentRoutPath == '/add'">
+    </router-link> -->
+    <!-- <router-link to="/" v-show="CurrentRoutPath == '/add'">
         <button type="button" class="btn btn-primary">Back</button>
     </router-link>
-    <router-link to="/" v-show="CurrentRoutName == 'update'">
+    <router-link to="/" v-show="CurrentRoutName == 'Update Student'">
         <button type="button" class="btn btn-primary">Back</button>
-    </router-link>
+    </router-link> -->
   </div>
 </template>
 
@@ -18,12 +18,12 @@
 export default {
 name: 'NavbarComponentView',
 computed:{
-    CurrentRoutPath(){
-        return this.$route.path
-    },
-    CurrentRoutName(){
-        return this.$route.name
-    }
+    // CurrentRoutPath(){
+    //     return this.$route.path
+    // },
+    // CurrentRoutName(){
+    //     return this.$route.name
+    // }
 
 },  
 }
